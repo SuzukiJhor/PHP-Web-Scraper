@@ -1,0 +1,5 @@
+/vendor
+/phpdocker
+.env
+composer.json
+docker-compose.yml
