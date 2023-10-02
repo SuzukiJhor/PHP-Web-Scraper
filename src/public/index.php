@@ -1,3 +1,3 @@
 <?php 
-    echo 'insider';
-?>
+
+include '../app/index.php';
