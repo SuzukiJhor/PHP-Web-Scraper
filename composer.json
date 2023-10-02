@@ -1,0 +1,19 @@
+{
+    "name": "jhordans/web-scraper",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Jhordans\\WebScraper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JhordanS",
+            "email": "jhordan.kendy1@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8",
+        "symfony/dom-crawler": "^6.3"
+    }
+}
