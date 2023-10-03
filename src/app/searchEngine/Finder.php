@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
-
 class Finder {
 
     private $httpClient;
@@ -27,7 +26,6 @@ class Finder {
         
         $this->crawler->addHtmlContent($html);
         
-        
         $filteredElements = $this->crawler->filter('span.card-curso__nome');
         
         $items = [];
@@ -35,9 +33,7 @@ class Finder {
         foreach($filteredElements as $item) {
             $items[] = $item->textContent;
         }
-
         return $items;
-
     }
 
 }
