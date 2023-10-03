@@ -2,3 +2,4 @@
 /phpdocker
 .env
 docker-compose.yml
+composer-lock
