@@ -2,13 +2,11 @@
 
 namespace App\Helpers;
 
-
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Finder
 {
-
     private $httpClient;
 
     private $crawler;
@@ -26,15 +24,15 @@ class Finder
         $html = $res->getBody();
 
         $this->crawler->addHtmlContent($html);
-        
-        
+
         $filteredElements = $this->crawler->filter('figcaption.orbit-caption');
-        
+
         $items = [];
 
         foreach ($filteredElements as $item) {
             $items[] = $item->textContent;
         }
+
         return $items;
     }
 }
