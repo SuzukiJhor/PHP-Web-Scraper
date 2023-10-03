@@ -1,12 +1,13 @@
-<?php 
+<?php
 
-namespace app\searchEngine;
+namespace App\Helpers;
 
-use GuzzleHttp\Client;
+
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
-class Finder {
+class Finder
+{
 
     private $httpClient;
 
@@ -20,20 +21,20 @@ class Finder {
 
     public function find(string $url): array
     {
-   
+
         $res = $this->httpClient->request('GET', $url);
         $html = $res->getBody();
-        
+
         $this->crawler->addHtmlContent($html);
         
-        $filteredElements = $this->crawler->filter('span.card-curso__nome');
+        
+        $filteredElements = $this->crawler->filter('figcaption.orbit-caption');
         
         $items = [];
 
-        foreach($filteredElements as $item) {
+        foreach ($filteredElements as $item) {
             $items[] = $item->textContent;
         }
         return $items;
     }
-
 }

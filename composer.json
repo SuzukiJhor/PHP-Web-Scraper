@@ -2,8 +2,12 @@
     "name": "jhordans/web-scraper",
     "type": "library",
     "autoload": {
+        "classmap": [
+            "src/app/searchEngine/Finder.php"
+        ],
         "psr-4": {
-            "Jhordans\\WebScraper\\": "src/"
+            "App\\Helpers\\": "searchEngine/"
+            
         }
     },
     "authors": [
@@ -13,8 +17,8 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^7.8",
-        "symfony/dom-crawler": "^6.3",
-        "symfony/css-selector": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^4.2",
+        "symfony/css-selector": "^4.2"
     }
 }
